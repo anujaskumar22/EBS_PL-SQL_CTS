@@ -1,0 +1,10 @@
+Declare
+v_num number:=4;
+v_fact number:=1;
+begin
+for i in 1..v_num loop
+v_fact:=v_fact*i;
+end loop;
+dbms_output.put_line('Factorial of ' ||v_num|| ' is ' ||v_fact);
+end;
+/
