@@ -1,0 +1,12 @@
+DECLARE
+    v_input_string VARCHAR2(100) := 'banana';  
+    v_char_to_count CHAR := 'a'; 
+    v_count NUMBER := 0;
+    v_len_string NUMBER;
+BEGIN
+    v_len_string:= LENGTH(v_input_string);
+    FOR i IN 1..v_len_string LOOP
+        IF SUBSTR(v_input_string, i, 1) = v_char_to_count THEN
+            v_count := v_count + 1;
+        END IF;
+    END LOOP;
