@@ -1,0 +1,12 @@
+DECLARE
+v_input_string VARCHAR2(100):='Hello World';
+v_reversed_string VARCHAR2(100);
+v_length NUMBER;
+begin
+v_length:=LENGTH(v_input_string);
+for i in REVERSE 1..v_length LOOP
+v_reversed_string:=v_reversed_string || substr(v_input_string,i,1);
+end loop;
+dbms_output.put_line('Reversed string is '|| v_reversed_string);
+end;
+/
