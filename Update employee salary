@@ -1,0 +1,18 @@
+create or replace procedure update_salary(
+p_emp_id IN number;
+p_emp_salary IN number;
+)
+as 
+begin
+update employees 
+SET salary=p_emp_salary
+where emp_id=p_emp_id;
+COMMIT;
+DBMS_OUTPUT.PUT_LINE('Salary :' ||p_emp_id);
+EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+        DBMS_OUTPUT.PUT_LINE('Error: Employee ID not found.');
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);
+END update_salary;
+/
